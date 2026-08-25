@@ -1,8 +1,9 @@
+import 'package:boru_crm/core/supabase_client.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../product_model.dart';
 
 class ProductRepository {
-  final SupabaseClient _client = Supabase.instance.client;
+  final SupabaseClient _client = SupabaseClientProvider.supabase;
 
   Future<List<ProductModel>> fetchProducts() async {
     final response = await _client.from('products').select().order('created_at', ascending: false);

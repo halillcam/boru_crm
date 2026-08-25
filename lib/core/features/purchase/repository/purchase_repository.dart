@@ -1,8 +1,9 @@
+import 'package:boru_crm/core/supabase_client.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../purchase_model.dart';
 
 class PurchaseRepository {
-  final SupabaseClient _client = Supabase.instance.client;
+  final SupabaseClient _client = SupabaseClientProvider.supabase;
 
   // Belirli bir müşterinin tüm satın alımlarını, ürün adıyla birlikte getirir
   Future<List<PurchaseModel>> fetchPurchasesForCustomer(String customerId) async {
