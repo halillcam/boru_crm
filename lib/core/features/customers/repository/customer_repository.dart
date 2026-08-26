@@ -6,7 +6,10 @@ class CustomerRepository {
   final SupabaseClient _client = SupabaseClientProvider.supabase;
 
   Future<List<CustomerModel>> fetchCustomers() async {
-    final response = await _client.from('customers').select().order('created_at', ascending: false);
+    final response = await _client
+        .from('customers')
+        .select('*, purchases(products(name))')
+        .order('created_at', ascending: false);
 
     return (response as List).map((json) => CustomerModel.fromJson(json)).toList();
   }

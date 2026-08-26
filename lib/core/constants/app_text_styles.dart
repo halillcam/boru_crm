@@ -29,4 +29,14 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.primary,
   );
+
+  static const cardTitle = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textPrimary,
+  );
+
+  static const cardSubtitle = TextStyle(fontSize: 13, color: AppColors.textSecondary);
+
+  static const badgeText = TextStyle(fontSize: 11, fontWeight: FontWeight.w700);
 }

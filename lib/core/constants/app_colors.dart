@@ -17,4 +17,12 @@ class AppColors {
   static const statusNegotiating = Color(0xFF8B5CF6);
   static const statusWon = Color(0xFF10B981);
   static const statusLost = Color(0xFFEF4444);
+
+  static const avatarBackground = Color(0xFFEEF2FF);
+  static const avatarText = Color(0xFF4F46E5);
+
+  static const paidBackground = Color(0xFFD1FAE5);
+  static const paidText = Color(0xFF059669);
+  static const unpaidBackground = Color(0xFFFFEDD5);
+  static const unpaidText = Color(0xFFEA580C);
 }

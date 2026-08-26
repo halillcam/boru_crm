@@ -7,6 +7,7 @@ class CustomerModel {
   final String status;
   final DateTime createdAt;
   final DateTime updatedAt;
+  final List<String> productNames;
 
   CustomerModel({
     required this.id,
@@ -17,9 +18,16 @@ class CustomerModel {
     required this.status,
     required this.createdAt,
     required this.updatedAt,
+    this.productNames = const [],
   });
 
   factory CustomerModel.fromJson(Map<String, dynamic> json) {
+    final purchasesJson = json['purchases'] as List<dynamic>? ?? [];
+    final products = purchasesJson
+        .map((p) => (p['products']?['name'] as String?))
+        .whereType<String>() // null olanları at
+        .toList();
+
     return CustomerModel(
       id: json['id'] as String,
       userId: json['user_id'] as String,
@@ -29,6 +37,7 @@ class CustomerModel {
       status: json['status'] as String,
       createdAt: DateTime.parse(json['created_at'] as String),
       updatedAt: DateTime.parse(json['updated_at'] as String),
+      productNames: products,
     );
   }
 

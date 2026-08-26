@@ -2,7 +2,10 @@ import 'package:boru_crm/core/features/auth/auth_cubit.dart';
 import 'package:boru_crm/core/features/auth/auth_state.dart';
 import 'package:boru_crm/core/features/auth/login_page.dart';
 import 'package:boru_crm/core/features/customers/customers_cubit.dart';
+import 'package:boru_crm/core/features/customers/customers_list_page.dart';
 import 'package:boru_crm/core/features/customers/repository/customer_repository.dart';
+import 'package:boru_crm/core/features/notes/notes_cubit.dart';
+import 'package:boru_crm/core/features/notes/repository/notes_repository.dart';
 import 'package:boru_crm/core/features/product/product_cubit.dart';
 import 'package:boru_crm/core/features/product/repository/product_repository.dart';
 import 'package:boru_crm/core/features/purchase/purchase_cubit.dart';
@@ -32,6 +35,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => ProductCubit(ProductRepository())),
         BlocProvider(create: (_) => PurchaseCubit(PurchaseRepository())),
         BlocProvider(create: (_) => AuthCubit()),
+        BlocProvider(create: (_) => NotesCubit(NoteRepository())),
       ],
       child: MaterialApp(
         title: 'Boru CRM',
@@ -50,7 +54,7 @@ class AuthGate extends StatelessWidget {
     return BlocBuilder<AuthCubit, AuthState>(
       builder: (context, state) {
         return switch (state) {
-          AuthAuthenticated() => const _CustomerListPlaceholder(),
+          AuthAuthenticated() => const CustomersListPage(),
           AuthInitial() || AuthLoading() => const _SplashLoading(),
           AuthUnauthenticated() || AuthError() => const LoginPage(),
         };
@@ -65,17 +69,5 @@ class _SplashLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(body: Center(child: CircularProgressIndicator()));
-  }
-}
-
-/// Geçici ekran — customers_list_page.dart yazılana kadar burada duracak.
-class _CustomerListPlaceholder extends StatelessWidget {
-  const _CustomerListPlaceholder();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('Giriş başarılı! Customer list yakında burada olacak.')),
-    );
   }
 }
