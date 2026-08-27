@@ -28,6 +28,15 @@ class CustomersCubit extends Cubit<CustomersState> {
     }
   }
 
+  Future<void> updateCustomer(String id, Map<String, dynamic> updates) async {
+    try {
+      await _repository.updateCustomer(id, updates);
+      await loadCustomers(); // listeyi tazele
+    } catch (e) {
+      emit(CustomersError(e.toString()));
+    }
+  }
+
   Future<void> deleteCustomer(String id) async {
     try {
       await _repository.deleteCustomer(id);

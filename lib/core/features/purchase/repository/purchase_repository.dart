@@ -20,6 +20,7 @@ class PurchaseRepository {
     required String customerId,
     required String productId,
     required double amount,
+    required DateTime purchasedAt, // <-- yeni parametre
     bool isPaid = false,
   }) async {
     await _client.from('purchases').insert({
@@ -27,6 +28,7 @@ class PurchaseRepository {
       'product_id': productId,
       'amount': amount,
       'is_paid': isPaid,
+      'purchased_at': purchasedAt.toIso8601String(), // <-- eklendi
     });
   }
 

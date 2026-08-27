@@ -21,6 +21,7 @@ class PurchaseCubit extends Cubit<PurchaseState> {
     required String customerId,
     required String productId,
     required double amount,
+    required DateTime purchasedAt, // <-- yeni parametre
     bool isPaid = false,
   }) async {
     try {
@@ -28,9 +29,10 @@ class PurchaseCubit extends Cubit<PurchaseState> {
         customerId: customerId,
         productId: productId,
         amount: amount,
+        purchasedAt: purchasedAt,
         isPaid: isPaid,
       );
-      await loadPurchases(customerId); // aynı müşterinin listesini tazele
+      await loadPurchases(customerId);
     } catch (e) {
       emit(PurchaseError(e.toString()));
     }

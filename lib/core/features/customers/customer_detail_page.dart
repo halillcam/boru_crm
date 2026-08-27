@@ -1,3 +1,5 @@
+import 'package:boru_crm/core/features/customers/add_edit_customer_page.dart';
+import 'package:boru_crm/core/features/purchase/add_purchase_page.dart';
 import 'package:boru_crm/core/widgets/purchase_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -55,7 +57,10 @@ class _CustomerDetailPageState extends State<CustomerDetailPage> {
           IconButton(
             icon: const Icon(Icons.edit_outlined, color: AppColors.textPrimary),
             onPressed: () {
-              // TODO: Edit customer ekranına yönlendir
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => AddEditCustomerPage(customer: customer)),
+              );
             },
           ),
         ],
@@ -112,7 +117,14 @@ class _CustomerDetailPageState extends State<CustomerDetailPage> {
           _SectionHeader(
             title: AppStrings.purchasesTitle,
             onAddPressed: () {
-              // TODO: Add purchase ekranına yönlendir
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => AddPurchasePage(customerId: customer.id)),
+              ).then((_) {
+                if (context.mounted) {
+                  context.read<PurchaseCubit>().loadPurchases(customer.id);
+                }
+              });
             },
           ),
           const SizedBox(height: 10),
