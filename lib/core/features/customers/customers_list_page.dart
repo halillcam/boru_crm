@@ -1,5 +1,6 @@
 import 'package:boru_crm/core/features/customers/add_edit_customer_page.dart';
 import 'package:boru_crm/core/features/customers/customer_detail_page.dart';
+import 'package:boru_crm/core/features/product/product_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -36,9 +37,15 @@ class _CustomersListPageState extends State<CustomersListPage> {
         ),
         actions: [
           IconButton(
+            icon: const Icon(Icons.inventory_2_outlined, color: AppColors.textPrimary),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (_) => const ProductsListPage()));
+            },
+          ),
+          IconButton(
             icon: const Icon(Icons.search, color: AppColors.textPrimary),
             onPressed: () {
-              // TODO: arama özelliği ileride eklenecek
+              // arama özelliği eklenecek
             },
           ),
         ],

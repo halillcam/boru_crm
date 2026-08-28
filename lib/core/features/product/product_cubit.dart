@@ -12,6 +12,7 @@ class ProductCubit extends Cubit<ProductState> {
     emit(ProductLoading());
     try {
       final products = await _repository.fetchProducts();
+
       emit(ProductLoaded(products));
     } catch (e) {
       emit(ProductError(e.toString()));
@@ -21,6 +22,7 @@ class ProductCubit extends Cubit<ProductState> {
   Future<void> addProduct(ProductModel product) async {
     try {
       await _repository.addProduct(product);
+
       await loadProducts();
     } catch (e) {
       emit(ProductError(e.toString()));

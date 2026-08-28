@@ -9,10 +9,14 @@ class StatusDropdown extends StatelessWidget {
 
   const StatusDropdown({super.key, required this.value, required this.onChanged});
 
-  static const _statuses = ['new', 'contacted', 'negotiating', 'won', 'lost'];
+  // Kod (value) hep İngilizce kalmalı — veritabanı ve StatusHelper bunu bekliyor
+  static const _statuses = ['paid', 'unpaid', 'pending'];
 
   @override
   Widget build(BuildContext context) {
+    // Eski/bozuk veriye karşı güvenlik: listede yoksa ilk değere düş
+    final safeValue = _statuses.contains(value) ? value : _statuses.last;
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14),
       decoration: BoxDecoration(
@@ -22,7 +26,7 @@ class StatusDropdown extends StatelessWidget {
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
-          value: value,
+          value: safeValue,
           isExpanded: true,
           icon: const Icon(Icons.unfold_more, color: AppColors.textSecondary, size: 20),
           items: _statuses.map((status) {
@@ -30,7 +34,7 @@ class StatusDropdown extends StatelessWidget {
               value: status,
               child: Row(
                 children: [
-                  Icon(Icons.swap_vert, size: 16, color: StatusHelper.colorFor(status)),
+                  Icon(Icons.circle, size: 10, color: StatusHelper.colorFor(status)),
                   const SizedBox(width: 8),
                   Text(StatusHelper.labelFor(status), style: AppTextStyles.cardTitle),
                 ],

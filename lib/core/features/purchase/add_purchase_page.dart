@@ -135,7 +135,7 @@ class _AddPurchasePageState extends State<AddPurchasePage> {
               CustomTextField(
                 label: AppStrings.amountLabel,
                 hint: AppStrings.amountHint,
-                icon: Icons.attach_money,
+                icon: Icons.currency_lira, // <-- lira ikonu
                 controller: _amountController,
               ),
               const SizedBox(height: 16),

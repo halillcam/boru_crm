@@ -82,7 +82,7 @@ class _AddProductPageState extends State<AddProductPage> {
               CustomTextField(
                 label: AppStrings.priceLabel,
                 hint: AppStrings.priceHint,
-                icon: Icons.attach_money,
+                icon: Icons.currency_lira, // <-- lira ikonu
                 controller: _priceController,
               ),
               const SizedBox(height: 24),

@@ -18,8 +18,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Supabase.initialize(
-    url: "https://ewdybmwevohlythgxyql.supabase.co",
-    publishableKey: "sb_publishable_EG8BpMUpaAuobNOZKa0fTw_UlgRHfrX",
+    url: "https://godkhbvexngcvxqbgbet.supabase.co",
+    publishableKey: "sb_publishable_hc9RJwFnz2maSoQHLrFsNA_ufr81ut4",
   );
   runApp(const MyApp());
 }
@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => NotesCubit(NoteRepository())),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Boru CRM',
         theme: ThemeData(colorSchemeSeed: Colors.indigo, useMaterial3: true),
         home: const AuthGate(),

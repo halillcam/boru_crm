@@ -34,7 +34,7 @@ class _AddEditCustomerPageState extends State<AddEditCustomerPage> {
     _nameController = TextEditingController(text: customer?.name ?? '');
     _phoneController = TextEditingController(text: customer?.phone ?? '');
     _emailController = TextEditingController(text: customer?.email ?? '');
-    _status = customer?.status ?? 'new';
+    _status = customer?.status ?? 'pending';
   }
 
   @override

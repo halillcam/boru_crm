@@ -38,7 +38,7 @@ class PurchaseCard extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text('\$${purchase.amount.toStringAsFixed(0)}', style: AppTextStyles.cardTitle),
+              Text('${purchase.amount.toStringAsFixed(0)} ₺', style: AppTextStyles.cardTitle),
               const SizedBox(height: 6),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),

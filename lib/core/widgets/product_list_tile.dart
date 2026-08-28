@@ -32,7 +32,7 @@ class ProductListTile extends StatelessWidget {
           ),
           const SizedBox(width: 12),
           Expanded(child: Text(product.name, style: AppTextStyles.cardTitle)),
-          Text('\$${product.price.toStringAsFixed(0)}', style: AppTextStyles.cardTitle),
+          Text('${product.price.toStringAsFixed(0)} ₺', style: AppTextStyles.cardTitle),
           if (onDelete != null) ...[
             const SizedBox(width: 8),
             IconButton(

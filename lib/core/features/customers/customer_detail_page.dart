@@ -1,5 +1,6 @@
 import 'package:boru_crm/core/features/customers/add_edit_customer_page.dart';
 import 'package:boru_crm/core/features/purchase/add_purchase_page.dart';
+import 'package:boru_crm/core/widgets/add_note_dialog.dart';
 import 'package:boru_crm/core/widgets/purchase_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -150,7 +151,14 @@ class _CustomerDetailPageState extends State<CustomerDetailPage> {
           _SectionHeader(
             title: AppStrings.notesTitle,
             onAddPressed: () {
-              // TODO: Add note dialogu göster
+              showDialog(
+                context: context,
+                builder: (_) => AddNoteDialog(
+                  onSave: (content) {
+                    context.read<NotesCubit>().addNote(customer.id, content);
+                  },
+                ),
+              );
             },
           ),
           const SizedBox(height: 10),

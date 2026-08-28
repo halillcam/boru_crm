@@ -3,67 +3,73 @@ class AppStrings {
 
   // Login ekranı
   static const appName = 'Börü CRM';
-  static const loginSubtitle = 'Sign in to your account to continue';
+  static const loginSubtitle = 'Devam etmek için hesabınızda oturum açın';
   static const emailLabel = 'Email';
   static const emailHint = 'name@company.com';
-  static const passwordLabel = 'Password';
-  static const forgotPassword = 'Forgot password?';
-  static const signIn = 'Sign In';
-  static const noAccount = "Don't have an account? ";
-  static const signUp = 'Sign Up';
+  static const passwordLabel = 'Şifre';
+  static const forgotPassword = 'Şifreni mi unuttun ? ';
+  static const signIn = 'Giriş yap';
+  static const noAccount = "Üye Değilmisin ?  ";
+  static const signUp = 'Üye ol';
 
   // Hata mesajları
-  static const emailRequired = 'Email is required';
-  static const passwordRequired = 'Password is required';
-  static const invalidEmail = 'Enter a valid email';
+  static const emailRequired = 'Email';
+  static const passwordRequired = 'Şifre';
+  static const invalidEmail = 'Geçerli bir e-posta adresi girin';
 
   // Customer list ekranı
-  static const customersTitle = 'Customers';
-  static const searchHint = 'Search customers...';
+  static const customersTitle = 'Müşteriler';
+  static const searchHint = 'Müşteriler Aranıyor ...';
   static const noCustomersYet = 'Henüz müşteri eklenmedi';
   static const noProduct = 'Ürün yok';
 
   // Customer detail ekranı
-  static const purchasesTitle = 'Purchases';
-  static const notesTitle = 'Notes';
-  static const addLabel = '+ Add';
-  static const paid = 'PAID';
-  static const unpaid = 'UNPAID';
+  static const purchasesTitle = 'Satın Almalar';
+  static const notesTitle = 'Notlar';
+  static const addLabel = '+ Ekle';
+  static const paid = 'Ücretli';
+  static const unpaid = 'Ücretsiz';
   static const noPurchasesYet = 'Henüz satın alma yok';
   static const noNotesYet = 'Henüz not yok';
 
   // Add/Edit customer ekranı
-  static const addCustomerTitle = 'Add Customer';
-  static const editCustomerTitle = 'Edit Customer';
-  static const nameLabel = 'Name';
-  static const nameHint = 'Enter customer name';
-  static const phoneLabel = 'Phone';
-  static const phoneHint = 'Enter phone number';
-  static const emailHintCustomer = 'Enter email address';
-  static const statusLabel = 'Status';
-  static const saveCustomer = 'Save Customer';
+  static const addCustomerTitle = 'Müşteri Ekle';
+  static const editCustomerTitle = 'Müşteriyi Güncelle';
+  static const nameLabel = 'İsim';
+  static const nameHint = 'Müşteri İsmi';
+  static const phoneLabel = 'Telefon';
+  static const phoneHint = 'Telefon Numarası';
+  static const emailHintCustomer = 'E-mail Adresi';
+  static const statusLabel = 'Durum';
+  static const saveCustomer = 'Müşteriyi Kaydet';
   static const nameRequired = 'İsim boş bırakılamaz';
 
   // Products ekranı
-  static const productsTitle = 'Products';
+  static const productsTitle = 'Ürünler';
   static const noProductsYet = 'Henüz ürün eklenmedi';
-  static const addProductTitle = 'Add Product';
-  static const productNameLabel = 'Product Name';
-  static const productNameHint = 'Enter product name';
-  static const priceLabel = 'Price';
+  static const addProductTitle = 'Ürün Ekle';
+  static const productNameLabel = 'Ürün ismi';
+  static const productNameHint = 'Ürün ismi';
+  static const priceLabel = 'Fiyat';
   static const priceHint = '0.00';
-  static const saveProduct = 'Save Product';
+  static const saveProduct = 'Ürünü Kaydet';
   static const productNameRequired = 'Ürün adı boş bırakılamaz';
 
   // Add purchase ekranı
-  static const addPurchaseTitle = 'Add Purchase';
-  static const productLabel = 'Product';
-  static const selectProductHint = 'Select a product';
-  static const amountLabel = 'Amount';
+  static const addPurchaseTitle = 'Satın Alma Ekle';
+  static const productLabel = 'Ürün';
+  static const selectProductHint = 'Ürün seç';
+  static const amountLabel = 'Miktar';
   static const amountHint = '0.00';
-  static const purchaseDateLabel = 'Purchase Date';
-  static const selectDateHint = 'Select date';
-  static const markAsPaid = 'Mark as paid';
-  static const savePurchase = 'Save Purchase';
+  static const purchaseDateLabel = 'Satin Alma Tarihi';
+  static const selectDateHint = 'Tarih Seç';
+  static const markAsPaid = 'Ödendi olarak işaretle';
+  static const savePurchase = 'Satın Alımı Kaydet';
   static const productRequired = 'Lütfen bir ürün seçin';
+
+  // notes
+  static const addNoteTitle = 'Not Ekle';
+  static const addNoteHint = 'Notunuzu buraya yazın...';
+  static const cancel = 'Geri';
+  static const save = 'Kaydet';
 }
