@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                           Text(AppStrings.noAccount, style: AppTextStyles.subtitle),
                           GestureDetector(
                             onTap: () {
-                              // TODO: Sign up ekranına yönlendir
+                              // signup ekranına yönlendirir
                             },
                             child: Text(AppStrings.signUp, style: AppTextStyles.linkText),
                           ),

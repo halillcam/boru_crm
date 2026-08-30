@@ -13,13 +13,15 @@ import 'package:boru_crm/core/features/purchase/repository/purchase_repository.d
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' hide AuthState;
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  await dotenv.load(fileName: ".env");
   await Supabase.initialize(
-    url: "https://godkhbvexngcvxqbgbet.supabase.co",
-    publishableKey: "sb_publishable_hc9RJwFnz2maSoQHLrFsNA_ufr81ut4",
+    url: dotenv.env["SUPABASE_URL"]!,
+    publishableKey: dotenv.env["SUPABASE_PUBLIC_KEY"]!,
   );
   runApp(const MyApp());
 }
