@@ -1,4 +1,4 @@
-# Boru CRM
+# Börü CRM
 
 Flutter ve Supabase kullanılarak geliştirilmiş, küçük ölçekli bir **CRM (Customer Relationship Management)** mobil uygulaması. Bu proje 1 haftalık bir zaman diliminde, Flutter'da BLoC/Cubit state management ve Supabase backend'ini birlikte kullanma pratiği yapmak amacıyla geliştirilmiştir.
 
@@ -53,12 +53,7 @@ Supabase tarafında 4 tablo bulunur: `customers`, `products`, `purchases`, `note
 
 ## Tasarım Süreci
 
-Uygulamanın arayüz tasarımları **Google Stitch** ile prototiplenmiş, ardından Flutter widget koduna geçirilmiştir. Geliştirme süreci boyunca kod yazımı, mimari kararlar ve hata ayıklama konularında **Claude (Anthropic)** ile birlikte çalışılmıştır.
-
-
-
-> **Not:**
- 
+Uygulamanın arayüz tasarımları **Google Stitch** ile prototiplenmiş, ardından Flutter widget koduna geçirilmiştir. Geliştirme süreci boyunca UI kod yazımı **Claude** ile birlikte çalışılmıştır.
 
 
 
@@ -69,11 +64,8 @@ Uygulamanın arayüz tasarımları **Google Stitch** ile prototiplenmiş, ardın
 - [x] Müşteriye satın alma/ödeme kaydı ekleme
 - [x] Row Level Security ile kullanıcı bazlı veri izolasyonu
 
-##  Bilinen Sınırlamalar / Geliştirilebilecek Noktalar
 
-
-
-##  NOT:
+> **Not:**
 `.env` dosyası `.gitignore` ile gizlenmiştir önceki key'ler görünüyor amacım .env i yide dahil etmekti,
 Projenin database şemasına `/supabase` klasörü içindeki `schema.sql` ile ulaşabilirsiniz.
 Bu proje eğitim ve portföy amacıyla geliştirilmiştir.
